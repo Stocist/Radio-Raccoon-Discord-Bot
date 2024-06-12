@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Stocist",
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "@discord-player/extractor": "^4.4.7",
