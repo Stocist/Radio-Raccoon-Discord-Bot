@@ -1,14 +1,16 @@
+"use strict";
+//@ts-check
+
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
+/**
+ * @type {import("../types/index").ICommandBuilder}
+ */
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("ping")
     .setDescription('Replies with "Pong!"'),
-  /**
-   *
-   * @param {import("../types/index.d").IExecuteParameter} param
-   * @returns {import("../types/index.d").TExecuteReturn<void>}
-   */
+
   async execute(param) {
     const { client, interaction } = param;
     await interaction.reply("Pong!");

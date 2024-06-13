@@ -1,11 +1,17 @@
+"use strict";
+//@ts-check
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { MessageEmbed } = require("discord.js");
 
+/**
+ * @type {import("../types/index").ICommandBuilder}
+ */
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("resume")
     .setDescription("resumes the current song."),
-  execute: async ({ client, interaction }) => {
+  execute: async (param) => {
+    const { client, interaction } = param;
     const queue = client.player.getQueue(interaction.guild);
 
     if (!queue) {

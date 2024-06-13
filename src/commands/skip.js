@@ -1,11 +1,15 @@
+"use strict";
+//@ts-check
 const { SlashCommandBuilder } = require("@discordjs/builders");
-
+/**
+ * @type {import("@/types").ICommandBuilder}
+ */
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("skip")
     .setDescription("Skips the current song."),
-  async execute(interaction) {
-    const { client } = interaction;
+  async execute(param) {
+    const { client, interaction } = param;
     const queue = client.player.getQueue(interaction.guildId);
 
     if (!queue || !queue.playing) {

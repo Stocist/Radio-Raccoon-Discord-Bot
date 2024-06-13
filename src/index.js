@@ -1,3 +1,5 @@
+"use strict";
+//@ts-check
 require("dotenv").config();
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
@@ -7,6 +9,9 @@ const { Player } = require("discord-player");
 const fs = require("node:fs");
 const path = require("node:path");
 
+/**
+ * @type {import("discord.js").Client}
+ */
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
